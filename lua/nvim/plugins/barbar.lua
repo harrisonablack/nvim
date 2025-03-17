@@ -13,8 +13,11 @@ return {
 			-- Default Keybinds from github
 
 			-- Move to previous/next
-			map("n", "<C-,>", "<Cmd>BufferPrevious<CR>", opts)
-			map("n", "<C-.>", "<Cmd>BufferNext<CR>", opts)
+			-- map("n", "<C-,>", "<Cmd>BufferPrevious<CR>", opts)
+			-- map("n", "<C-.>", "<Cmd>BufferNext<CR>", opts)
+			map("n", ",", "<Cmd>BufferPrevious<CR>", opts)
+			map("n", ".", "<Cmd>BufferNext<CR>", opts)
+
 			-- Re-order to previous/next
 			map("n", "<C-<>", "<Cmd>BufferMovePrevious<CR>", opts)
 			map("n", "<C->>", "<Cmd>BufferMoveNext<CR>", opts)
