@@ -1,5 +1,7 @@
-# Introduction
-This repo hosts my personal nvim config, for which i use on Linux and Macos.
+![](https://skillicons.dev/icons?i=apple,neovim,github)
+
+# Neovim
+This is my own personal neovim config i used currently for software development
 
 The entry point of the config is at `init.lua`, which calls `lua/nvim/bootstrap.lua` to initialise [lazy.nvim](https://github.com/folke/lazy.nvim), the plugin manager. Lazy then reads the `lua/nvim/plugins` directory for plugins. Then `lua/nvim/config.lua` is called containing nvim configs. Plugin specific configs are contained in their respective file inside of `lua/nvim/plugins`   
 
