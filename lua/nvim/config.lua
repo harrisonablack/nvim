@@ -35,4 +35,12 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme flexoki-dark")
+
+local lspconfig = require("lspconfig")
+local util = require("lspconfig.util")
+
+lspconfig.jdtls.setup({
+	root_dir = util.root_pattern(".git", "src"),
+	cmd = { "jdtls" },
+})
