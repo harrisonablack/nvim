@@ -24,9 +24,17 @@ require("lazy").setup({
 --require("lualine").setup()
 require("neodev").setup()
 require("lualine").setup({
-	options = { theme = "palenight" },
+	options = { theme = "ayu_dark" },
 	globalstatus = true,
 	disabled_filetypes = { "dashboard" },
+	sections = {
+		lualine_a = { "mode" },
+		lualine_b = { "branch", "diff", "diagnostics" },
+		lualine_c = { "filename" },
+		lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
+	},
 })
 --require("mini.starter").setup()
 require("which-key").setup()
