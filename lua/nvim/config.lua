@@ -35,7 +35,7 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
-vim.cmd("colorscheme tokyonight-night")
+vim.cmd("colorscheme carbonfox")
 
 local lspconfig = require("lspconfig")
 local util = require("lspconfig.util")
