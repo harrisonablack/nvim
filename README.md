@@ -3,8 +3,6 @@
 # Neovim
 This is my own personal Neovim config i use.
 
-
-
 The config is split into 4 files, the root `init.lua` which calls `lua/nvim/plugins.lua`, `lua/nvim/settings.lua` and `lua/nvim/keymaps.lua`
 
 ## Installation and setup
