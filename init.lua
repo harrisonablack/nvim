@@ -1,2 +1,3 @@
-require("nvim.bootstrap")
-require("nvim.config")
+require("nvim.plugins")
+require("nvim.settings")
+require("nvim.keymaps")
