@@ -14,3 +14,6 @@ map('n', '<leader>f', ':Pick files <CR>')
 map("n", ",", "<Cmd>BufferPrevious<CR>", opts)
 map("n", ".", "<Cmd>BufferNext<CR>", opts)
 map("n", "<C-c>", "<Cmd>BufferClose<CR>", opts)
+
+map("n", "<leader>xX", "<Cmd>Trouble diagnostics toggle filter.buf=0<cr>")
+map("n", "<leader>xx", "<Cmd>Trouble diagnostics toggle<cr>")
