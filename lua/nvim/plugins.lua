@@ -26,8 +26,7 @@ require('nvim-autopairs').setup()
 require('blink.cmp').setup({
 	keymap = {
 		preset = "default",
-		["<Tab>"] = { "select_and_accept" },
-		["<CR>"] = { "select_and_accept" },
+		["<Tab>"] = { "select_and_accept", "fallback" },
 	},
 	fuzzy = {
 		implementation = "rust",
@@ -35,4 +34,11 @@ require('blink.cmp').setup({
 			force_version = "v1.6.0",
 		},
 	},
+	completion = {
+		menu = {
+			border = "none",
+		},
+	},
 })
+
+
