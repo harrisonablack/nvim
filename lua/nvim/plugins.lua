@@ -27,12 +27,8 @@ require('trouble').setup()
 require('nvim-autopairs').setup()
 require('blink.cmp').setup({
   keymap = {
-    preset = "default", -- keeps the usual defaults
-
-    -- Override <Tab> to confirm the first suggestion
+    preset = "default",
     ["<Tab>"] = { "select_and_accept" },
-
-    -- Optional: keep Enter doing the same
     ["<CR>"] = { "select_and_accept" },
   },
 })
