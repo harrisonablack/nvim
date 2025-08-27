@@ -26,9 +26,15 @@ require('mini.icons').setup()
 require('trouble').setup()
 require('nvim-autopairs').setup()
 require('blink.cmp').setup({
-  keymap = {
-    preset = "default",
-    ["<Tab>"] = { "select_and_accept" },
-    ["<CR>"] = { "select_and_accept" },
-  },
+	keymap = {
+		preset = "default",
+		["<Tab>"] = { "select_and_accept" },
+		["<CR>"] = { "select_and_accept" },
+	},
+	fuzzy = {
+		implementation = "rust",
+		prebuilt_binaries = {
+			force_version = "v1.6.0",
+		},
+	},
 })
