@@ -11,6 +11,7 @@ vim.pack.add({
 	{ src = "https://github.com/folke/trouble.nvim" },
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/saghen/blink.cmp" },
+	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 })
 
 require('oil').setup()
@@ -22,6 +23,7 @@ require('mason-lspconfig').setup()
 require('nvim-web-devicons').setup()
 require('trouble').setup()
 require('nvim-autopairs').setup()
+require('ibl').setup()
 require('blink.cmp').setup({
 	keymap = {
 		preset = "default",
