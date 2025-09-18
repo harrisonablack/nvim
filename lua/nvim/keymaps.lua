@@ -17,3 +17,6 @@ map("n", "<C-c>", "<Cmd>BufferClose<CR>", opts)
 
 map("n", "<leader>xX", "<Cmd>Trouble diagnostics toggle filter.buf=0<cr>")
 map("n", "<leader>xx", "<Cmd>Trouble diagnostics toggle<cr>")
+
+map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
+map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
