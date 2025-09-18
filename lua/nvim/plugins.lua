@@ -8,20 +8,20 @@ vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
-	{ src = "https://github.com/folke/trouble.nvim" },
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/saghen/blink.cmp" },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
+	{ src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" }
 })
 
 require('oil').setup()
 require('lualine').setup()
+require("tiny-inline-diagnostic").setup()
 require('barbar').setup()
 require('mini.pick').setup()
 require('mason').setup()
 require('mason-lspconfig').setup()
 require('nvim-web-devicons').setup()
-require('trouble').setup()
 require('nvim-autopairs').setup()
 require('ibl').setup()
 require('blink.cmp').setup({
@@ -41,5 +41,3 @@ require('blink.cmp').setup({
 		},
 	},
 })
-
-
