@@ -11,12 +11,12 @@ vim.pack.add({
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	{ src = "https://github.com/saghen/blink.cmp" },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
-	{ src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" }
+	{ src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
+	{ src = "https://github.com/folke/which-key.nvim.git" },
 })
 
 require('oil').setup()
 require('lualine').setup()
-require("tiny-inline-diagnostic").setup()
 require('barbar').setup()
 require('mini.pick').setup()
 require('mason').setup()
@@ -24,6 +24,7 @@ require('mason-lspconfig').setup()
 require('nvim-web-devicons').setup()
 require('nvim-autopairs').setup()
 require('ibl').setup()
+require("which-key").setup()
 require('blink.cmp').setup({
 	keymap = {
 		preset = "default",
