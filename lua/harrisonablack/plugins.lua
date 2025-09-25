@@ -13,14 +13,12 @@ vim.pack.add({
   { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
   { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
   { src = "https://github.com/folke/which-key.nvim.git" },
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter.git" },
 })
 
 require('lualine').setup()
 require('barbar').setup()
 require('oil').setup()
 require('mini.pick').setup()
-require('nvim-treesitter').setup()
 require('nvim-web-devicons').setup()
 require('nvim-autopairs').setup()
 require('which-key').setup()
