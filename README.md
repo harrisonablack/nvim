@@ -1,4 +1,4 @@
-![](https://skillicons.dev/icons?i=neovim,linux,apple,lua,github,apple)
+![](https://skillicons.dev/icons?i=neovim,linux,apple,lua,github)
 
 # Neovim
 This is my own personal Neovim config i use.
