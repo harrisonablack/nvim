@@ -1,3 +1,3 @@
-require("nvim.plugins")
-require("nvim.settings")
-require("nvim.keymaps")
+require("harrisonablack.plugins")
+require("harrisonablack.settings")
+require("harrisonablack.keymaps")
