@@ -20,5 +20,3 @@ vim.ignorecase = true
 vim.shiftwidth = 2
 
 vim.cmd("colorscheme carbonfox")
-
-
