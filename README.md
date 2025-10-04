@@ -16,28 +16,5 @@ To install the config, clone the repo to your config folder, typically `~/.confi
 git clone https://github.com/harrisonablack/nvim.git ~/.config/nvim && nvim
 ```
 
-## Plugins
-```lua
-vim.pack.add({
-                                                                      -- LSP, Linting and Formatting
-  { src = "https://github.com/neovim/nvim-lspconfig" },                 -- LSP Server configs
-  { src = "https://github.com/mason-org/mason.nvim" },                  -- Package manager for LSP
-  { src = "https://github.com/mason-org/mason-lspconfig.nvim" },        -- Mason lspconfig integration
-  { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },-- Inline diagnostics
-  { src = "https://github.com/saghen/blink.cmp" },                      -- LSP Completions
-  { src = "https://github.com/windwp/nvim-autopairs" },                 -- Autopairs brackets, quotes etc
-                                                                      -- Files
-  { src = "https://github.com/stevearc/oil.nvim" },                     -- File explorer with vim motions
-  { src = "https://github.com/echasnovski/mini.pick" },                 -- File search
-                                                                      -- UI
-  { src = "https://github.com/nvim-lualine/lualine.nvim" },             -- Statusline
-  { src = "https://github.com/romgrk/barbar.nvim" },                    -- Buffer tab bar
-  { src = "https://github.com/nvim-tree/nvim-web-devicons" },           -- Barbar and oil icons
-  { src = "https://github.com/EdenEast/nightfox.nvim" },                -- Colortheme
-  { src = "https://github.com/folke/which-key.nvim.git" },              -- Provides keymap ui
-  { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },   -- Indentation guides
-})
-```
-
 ## Linters, LSP's, DSP's and formatters
 [mason.nvim](https://github.com/williamboman/mason.nvim) is used to install LSPs, linters etc and as such can be installed using `:Mason`, or to get help `:help mason`
