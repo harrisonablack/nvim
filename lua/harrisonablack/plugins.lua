@@ -3,7 +3,6 @@ vim.pack.add({
   { src = "https://github.com/EdenEast/nightfox.nvim" },
   { src = "https://github.com/echasnovski/mini.pick" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
-  { src = "https://github.com/romgrk/barbar.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/mason-org/mason.nvim" },
@@ -13,18 +12,18 @@ vim.pack.add({
   { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
   { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
   { src = "https://github.com/folke/which-key.nvim.git" },
+	{ src = "https://github.com/folke/trouble.nvim.git" },
 })
 
 require('lualine').setup()
-require('barbar').setup()
 require('oil').setup()
 require('mini.pick').setup()
 require('nvim-web-devicons').setup()
 require('nvim-autopairs').setup()
+require('trouble').setup()
 require('which-key').setup()
 require('ibl').setup()
 require('tiny-inline-diagnostic').setup()
-
 require('mason').setup()
 require('mason-lspconfig').setup()
 require('blink.cmp').setup({
@@ -44,3 +43,4 @@ require('blink.cmp').setup({
     },
   },
 })
+
