@@ -16,7 +16,6 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.icons" },
   { src = "https://github.com/nvim-mini/mini.pick" },
 	{ src = "https://github.com/nvim-mini/mini.pairs" },
-	{ src = "https://github.com/nvim-mini/mini.statusline" },
 	{ src = "https://github.com/kdheepak/lazygit.nvim.git" },
 	{ src = "https://github.com/nvim-mini/mini.bufremove.git" },
 })
