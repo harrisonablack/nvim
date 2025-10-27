@@ -7,16 +7,18 @@ vim.pack.add({
 	{ src = "https://github.com/saghen/blink.cmp" },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 	{ src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
-	{ src = "https://github.com/folke/which-key.nvim.git" },
 	{ src = "https://github.com/folke/trouble.nvim.git" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim.git" },
 	{ src = "https://github.com/folke/lazydev.nvim.git" },
-	{ src = "https://github.com/nvim-mini/mini.icons" },
-	{ src = "https://github.com/nvim-mini/mini.pick" },
 	{ src = "https://github.com/nvim-mini/mini.pairs" },
 	{ src = "https://github.com/nvim-mini/mini.starter.git" },
 	{ src = "https://github.com/kdheepak/lazygit.nvim.git" },
 	{ src = "https://github.com/nvim-mini/mini.bufremove.git" },
+
+	{ src = "https://github.com/romgrk/barbar.nvim.git" },
+	{ src = "https://github.com/nvim-telescope/telescope.nvim.git" },
+	{ src = "https://github.com/nvim-tree/nvim-web-devicons.git" },
+	{ src = "https://github.com/nvim-lua/plenary.nvim.git" },
 })
 
 require("lualine").setup({
@@ -34,13 +36,16 @@ require("lualine").setup({
 		lualine_z = { "location" },
 	},
 })
+require("barbar").setup({
+	animation = false,
+	icons = {
+    separator = {left = '', right = ''},
+	}
+})
 require("oil").setup()
-require("mini.pick").setup()
 require("mini.pairs").setup()
-require("mini.icons").setup()
 require("mini.starter").setup()
 require("trouble").setup()
-require("which-key").setup()
 require("ibl").setup()
 require("tiny-inline-diagnostic").setup()
 require("mason").setup()
