@@ -21,9 +21,12 @@ map('n', '<leader>lf', vim.lsp.buf.format, opts)
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 
-map('n', '<leader>f', '<Cmd>Pick files<CR>', opts)
-map('n', '<leader>r', '<Cmd>Pick buffers<CR>', opts)
-map('n', '<leader>g', '<Cmd>Pick grep_live<CR>', opts)
+map('n', '<leader>f', '<Cmd>Telescope find_files<CR>', opts)
+map('n', '<leader>r', '<Cmd>Telescope buffers<CR>', opts)
+map('n', '<leader>g', '<Cmd>Telescope live_grep<CR>', opts)
+
+map('n', ',', '<Cmd>BufferPrevious<CR>', opts)
+map('n', '.', '<Cmd>BufferNext<CR>', opts)
 
 map('n', '<leader>xx', '<Cmd>Trouble diagnostics toggle<CR>', opts)
 map('n', '<leader>xX', '<Cmd>Trouble diagnostics toggle filter.buf=0<CR>', opts)
