@@ -33,6 +33,11 @@ map('n', '<C-j>', ':wincmd j<CR>', opts)
 map('n', '<C-k>', ':wincmd k<CR>', opts)
 map('n', '<C-l>', ':wincmd l<CR>', opts)
 
+map('n', '<leader>h', ':vert res -5<CR>', opts)
+map('n', '<leader>j', ':res -5<CR>', opts)
+map('n', '<leader>k', ':res +5<CR>', opts)
+map('n', '<leader>l', ':vert res +5<CR>', opts)
+
 map('n', '<leader>xx', '<Cmd>Trouble diagnostics toggle<CR>', opts)
 map('n', '<leader>xX', '<Cmd>Trouble diagnostics toggle filter.buf=0<CR>', opts)
 
