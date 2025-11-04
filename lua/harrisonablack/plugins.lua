@@ -14,13 +14,20 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.starter.git" },
 	{ src = "https://github.com/kdheepak/lazygit.nvim.git" },
 	{ src = "https://github.com/nvim-mini/mini.bufremove.git" },
-
+	{ src = "https://github.com/aznhe21/actions-preview.nvim" },
 	{ src = "https://github.com/romgrk/barbar.nvim.git" },
 	{ src = "https://github.com/nvim-telescope/telescope.nvim.git" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons.git" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim.git" },
 })
 
+require("actions-preview").setup {
+	backend = { "telescope" },
+	telescope = vim.tbl_extend(
+		"force",
+		require("telescope.themes").get_dropdown(), {}
+	)
+}
 require("lualine").setup({
 	options = {
 		theme = "tomorrow_night",
@@ -49,8 +56,8 @@ require("oil").setup({
 	},
 	view_options = {
 		show_hidden = true,
-	}
-})
+	
+	}})
 require("mini.pairs").setup()
 require("mini.starter").setup()
 require("trouble").setup()
