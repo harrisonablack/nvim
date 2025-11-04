@@ -28,6 +28,7 @@ map('n', '<leader>g', '<Cmd>Telescope live_grep<CR>', opts)
 map('n', ',', '<Cmd>BufferPrevious<CR>', opts)
 map('n', '.', '<Cmd>BufferNext<CR>', opts)
 map('n', '<C-c>', '<Cmd>BufferClose<CR>', opts)
+map('n', '<C-x>', '<Cmd>BufferPin<CR>', opts)
 
 map('n', '<C-h>', ':wincmd h<CR>', opts)
 map('n', '<C-j>', ':wincmd j<CR>', opts)
