@@ -42,7 +42,15 @@ require("barbar").setup({
     separator = {left = '', right = ''},
 	}
 })
-require("oil").setup()
+require("oil").setup({
+	lsp_file_methods = {
+		enabled = true,
+		autosave_changes = true,
+	},
+	view_options = {
+		show_hidden = true,
+	}
+})
 require("mini.pairs").setup()
 require("mini.starter").setup()
 require("trouble").setup()
