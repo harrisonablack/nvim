@@ -17,6 +17,7 @@ vim.pack.add({
 	{ src = "https://github.com/aznhe21/actions-preview.nvim" },
 	{ src = "https://github.com/romgrk/barbar.nvim.git" },
 	{ src = "https://github.com/nvim-telescope/telescope.nvim.git" },
+	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons.git" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim.git" },
 })
@@ -109,3 +110,4 @@ telescope.setup({
 		}
 	}
 })
+telescope.load_extension("ui-select")
