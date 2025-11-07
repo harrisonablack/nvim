@@ -20,6 +20,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons.git" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim.git" },
+	{ src = "https://github.com/vimpostor/vim-tpipeline.git" },
 })
 
 require("actions-preview").setup {
