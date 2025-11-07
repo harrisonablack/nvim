@@ -14,7 +14,6 @@ map('n', '<leader>v', ':vsplit<CR>', opts)
 map('n', '<C-F>', '<Cmd>Open .<CR>', opts)
 map('n', '<leader>e', '<Cmd>Oil<CR>', opts)
 map('n', '<leader>E', require("oil").open_float, opts)
-map('n', '<leader>lg', '<Cmd>LazyGit<CR>', opts)
 
 map('n', '<leader>lf', vim.lsp.buf.format, opts)
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -24,7 +23,6 @@ map('n', '<leader>f', '<Cmd>Telescope find_files<CR>', opts)
 map('n', '<leader>r', '<Cmd>Telescope buffers<CR>', opts)
 map('n', '<leader>g', '<Cmd>Telescope live_grep<CR>', opts)
 map('n', '<leader>sa', require("actions-preview").code_actions, opts)
-
 
 map('n', ',', '<Cmd>BufferPrevious<CR>', opts)
 map('n', '.', '<Cmd>BufferNext<CR>', opts)

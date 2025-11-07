@@ -12,7 +12,6 @@ vim.pack.add({
 	{ src = "https://github.com/folke/lazydev.nvim.git" },
 	{ src = "https://github.com/nvim-mini/mini.pairs" },
 	{ src = "https://github.com/nvim-mini/mini.starter.git" },
-	{ src = "https://github.com/kdheepak/lazygit.nvim.git" },
 	{ src = "https://github.com/nvim-mini/mini.bufremove.git" },
 	{ src = "https://github.com/aznhe21/actions-preview.nvim" },
 	{ src = "https://github.com/romgrk/barbar.nvim.git" },
@@ -21,6 +20,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons.git" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim.git" },
 	{ src = "https://github.com/vimpostor/vim-tpipeline.git" },
+	{ src = "https://github.com/christoomey/vim-tmux-navigator.git" },
 })
 
 require("actions-preview").setup {
