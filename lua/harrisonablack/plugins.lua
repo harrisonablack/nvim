@@ -15,21 +15,39 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.bufremove.git" },
 	{ src = "https://github.com/aznhe21/actions-preview.nvim" },
 	{ src = "https://github.com/romgrk/barbar.nvim.git" },
-	{ src = "https://github.com/nvim-telescope/telescope.nvim.git" },
-	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
+	-- { src = "https://github.com/nvim-telescope/telescope.nvim.git" },
+	-- { src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons.git" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim.git" },
 	{ src = "https://github.com/vimpostor/vim-tpipeline.git" },
 	{ src = "https://github.com/christoomey/vim-tmux-navigator.git" },
+	{ src = "https://github.com/j-hui/fidget.nvim.git" },
+	{ src = "https://github.com/nvim-mini/mini.pick.git"}
 })
 
-require("actions-preview").setup {
-	backend = { "telescope" },
-	telescope = vim.tbl_extend(
-		"force",
-		require("telescope.themes").get_dropdown(), {}
-	)
-}
+-- require("actions-preview").setup {
+	-- backend = { "telescope" },
+	-- telescope = vim.tbl_extend(
+	-- 	"force",
+	-- 	require("telescope.themes").get_dropdown(), {}
+	-- )
+-- }
+local win_config = function()
+	local height = math.floor(0.618 * vim.o.lines)
+	local width = math.floor(0.618 * vim.o.columns)
+	return {
+		anchor = 'NW', height = height, width = width,
+		row = math.floor(0.5 * (vim.o.lines - height)),
+		col = math.floor(0.5 * (vim.o.columns - width)),
+	}
+end
+
+require("mini.pick").setup({
+	window = {
+		config = win_config
+	}
+})
+
 require("lualine").setup({
 	options = {
 		theme = "tomorrow_night",
@@ -86,29 +104,31 @@ require("blink.cmp").setup({
 	},
 })
 
-local telescope = require("telescope")
-telescope.setup({
-	defaults = {
-		preview = { treesitter = false },
-		color_devicons = true,
-		sorting_strategy = "ascending",
-		borderchars = {
-			"─", -- top
-			"│", -- right
-			"─", -- bottom
-			"│", -- left
-			"┌", -- top-left
-			"┐", -- top-right
-			"┘", -- bottom-right
-			"└", -- bottom-left
-		},
-		path_displays = { "smart" },
-		layout_config = {
-			height = 100,
-			width = 400,
-			prompt_position = "top",
-			preview_cutoff = 40,
-		}
-	}
-})
-telescope.load_extension("ui-select")
+-- local telescope = require("telescope")
+-- telescope.setup({
+-- 	defaults = {
+-- 		preview = { treesitter = false },
+-- 		color_devicons = true,
+-- 		sorting_strategy = "ascending",
+-- 		borderchars = {
+-- 			"─", -- top
+-- 			"│", -- right
+-- 			"─", -- bottom
+-- 			"│", -- left
+-- 			"┌", -- top-left
+-- 			"┐", -- top-right
+-- 			"┘", -- bottom-right
+-- 			"└", -- bottom-left
+-- 		},
+-- 		path_displays = { "smart" },
+-- 		layout_config = {
+-- 			height = 100,
+-- 			width = 400,
+-- 			prompt_position = "top",
+-- 			preview_cutoff = 40,
+-- 		}
+-- 	}
+-- })
+-- telescope.load_extension("ui-select")
+require("fidget").setup()
+
