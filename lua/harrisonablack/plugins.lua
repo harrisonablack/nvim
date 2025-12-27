@@ -1,3 +1,4 @@
+-- Plugin install list (vim.pack)
 vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/EdenEast/nightfox.nvim" },
@@ -15,39 +16,39 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.bufremove.git" },
 	{ src = "https://github.com/aznhe21/actions-preview.nvim" },
 	{ src = "https://github.com/romgrk/barbar.nvim.git" },
-	-- { src = "https://github.com/nvim-telescope/telescope.nvim.git" },
-	-- { src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons.git" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim.git" },
 	{ src = "https://github.com/vimpostor/vim-tpipeline.git" },
 	{ src = "https://github.com/christoomey/vim-tmux-navigator.git" },
 	{ src = "https://github.com/j-hui/fidget.nvim.git" },
-	{ src = "https://github.com/nvim-mini/mini.pick.git"}
+	{ src = "https://github.com/nvim-mini/mini.pick.git" },
+	{ src = "https://github.com/L3MON4D3/LuaSnip.git" },
+	{ src = "https://github.com/rafamadriz/friendly-snippets.git" },
 })
 
--- require("actions-preview").setup {
-	-- backend = { "telescope" },
-	-- telescope = vim.tbl_extend(
-	-- 	"force",
-	-- 	require("telescope.themes").get_dropdown(), {}
-	-- )
--- }
+-- Helpers
 local win_config = function()
 	local height = math.floor(0.618 * vim.o.lines)
 	local width = math.floor(0.618 * vim.o.columns)
 	return {
-		anchor = 'NW', height = height, width = width,
+		anchor = "NW",
+		height = height,
+		width = width,
 		row = math.floor(0.5 * (vim.o.lines - height)),
 		col = math.floor(0.5 * (vim.o.columns - width)),
 	}
 end
 
+-- Mini
 require("mini.pick").setup({
 	window = {
-		config = win_config
-	}
+		config = win_config,
+	},
 })
+require("mini.pairs").setup()
+require("mini.starter").setup()
 
+-- UI
 require("lualine").setup({
 	options = {
 		theme = "tomorrow_night",
@@ -63,12 +64,14 @@ require("lualine").setup({
 		lualine_z = { "location" },
 	},
 })
+
 require("barbar").setup({
 	animation = false,
 	icons = {
-    separator = {left = '', right = ''},
-	}
+		separator = { left = "", right = "" },
+	},
 })
+
 require("oil").setup({
 	lsp_file_methods = {
 		enabled = true,
@@ -76,20 +79,25 @@ require("oil").setup({
 	},
 	view_options = {
 		show_hidden = true,
-	
-	}})
-require("mini.pairs").setup()
-require("mini.starter").setup()
-require("trouble").setup()
+	},
+})
+
 require("ibl").setup()
 require("tiny-inline-diagnostic").setup()
+require("trouble").setup()
+
+-- LSP helpers
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("lazydev").setup()
+
+-- Completion / snippets
+local luasnip = require("luasnip")
+luasnip.config.setup({})
+
 require("blink.cmp").setup({
 	keymap = {
-		preset = "default",
-		["<Tab>"] = { "select_and_accept", "fallback" },
+		preset = "super-tab",
 	},
 	fuzzy = {
 		implementation = "rust",
@@ -97,38 +105,28 @@ require("blink.cmp").setup({
 			force_version = "v1.6.0",
 		},
 	},
+	snippets = { preset = "luasnip" },
+	sources = {
+		default = { "lsp", "path", "snippets", "buffer" },
+		providers = {
+			snippets = {
+				opts = {
+					friendly_snippets = true,
+				},
+			},
+		},
+	},
 	completion = {
 		menu = {
 			border = "none",
+			draw = {
+				columns = {
+					{ "kind_icon", "label", "label_description", gap = 1 }, { "kind" },
+				},
+			},
 		},
 	},
 })
 
--- local telescope = require("telescope")
--- telescope.setup({
--- 	defaults = {
--- 		preview = { treesitter = false },
--- 		color_devicons = true,
--- 		sorting_strategy = "ascending",
--- 		borderchars = {
--- 			"─", -- top
--- 			"│", -- right
--- 			"─", -- bottom
--- 			"│", -- left
--- 			"┌", -- top-left
--- 			"┐", -- top-right
--- 			"┘", -- bottom-right
--- 			"└", -- bottom-left
--- 		},
--- 		path_displays = { "smart" },
--- 		layout_config = {
--- 			height = 100,
--- 			width = 400,
--- 			prompt_position = "top",
--- 			preview_cutoff = 40,
--- 		}
--- 	}
--- })
--- telescope.load_extension("ui-select")
+-- Misc
 require("fidget").setup()
-

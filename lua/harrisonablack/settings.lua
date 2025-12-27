@@ -1,3 +1,4 @@
+-- Options
 vim.o.number = true
 vim.wo.relativenumber = true
 
@@ -17,6 +18,6 @@ vim.g.have_nerd_font = true
 
 vim.cursorcolumn = false
 vim.ignorecase = true
-vim.shiftwidth = 2
 
+-- Theme
 vim.cmd("colorscheme carbonfox")
