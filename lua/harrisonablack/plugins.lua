@@ -1,4 +1,3 @@
--- Plugin install list (vim.pack)
 vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/EdenEast/nightfox.nvim" },
@@ -26,7 +25,6 @@ vim.pack.add({
 	{ src = "https://github.com/rafamadriz/friendly-snippets.git" },
 })
 
--- Helpers
 local win_config = function()
 	local height = math.floor(0.618 * vim.o.lines)
 	local width = math.floor(0.618 * vim.o.columns)
@@ -39,7 +37,6 @@ local win_config = function()
 	}
 end
 
--- Mini
 require("mini.pick").setup({
 	window = {
 		config = win_config,
@@ -48,7 +45,6 @@ require("mini.pick").setup({
 require("mini.pairs").setup()
 require("mini.starter").setup()
 
--- UI
 require("lualine").setup({
 	options = {
 		theme = "tomorrow_night",
@@ -86,12 +82,10 @@ require("ibl").setup()
 require("tiny-inline-diagnostic").setup()
 require("trouble").setup()
 
--- LSP helpers
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("lazydev").setup()
 
--- Completion / snippets
 local luasnip = require("luasnip")
 luasnip.config.setup({})
 
