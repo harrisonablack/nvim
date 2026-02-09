@@ -23,6 +23,8 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.pick.git" },
 	{ src = "https://github.com/L3MON4D3/LuaSnip.git" },
 	{ src = "https://github.com/rafamadriz/friendly-snippets.git" },
+	{ src = "https://github.com/nvim-mini/mini.diff.git" },
+	{ src = "https://github.com/pmizio/typescript-tools.nvim" },
 })
 
 local win_config = function()
@@ -42,6 +44,7 @@ require("mini.pick").setup({
 		config = win_config,
 	},
 })
+require("mini.diff").setup()
 require("mini.pairs").setup()
 require("mini.starter").setup()
 
@@ -124,3 +127,5 @@ require("blink.cmp").setup({
 
 -- Misc
 require("fidget").setup()
+
+require("typescript-tools").setup()
