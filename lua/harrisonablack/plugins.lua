@@ -25,6 +25,7 @@ vim.pack.add({
 	{ src = "https://github.com/rafamadriz/friendly-snippets.git" },
 	{ src = "https://github.com/nvim-mini/mini.diff.git" },
 	{ src = "https://github.com/pmizio/typescript-tools.nvim" },
+	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim.git" },
 })
 
 local win_config = function()
@@ -129,3 +130,6 @@ require("blink.cmp").setup({
 require("fidget").setup()
 
 require("typescript-tools").setup()
+
+require('render-markdown').setup({})
+
