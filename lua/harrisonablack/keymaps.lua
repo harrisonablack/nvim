@@ -30,11 +30,9 @@ map("n", "<leader>f", ":Pick files<CR>", opts)
 map("n", "<leader>g", ":Pick grep_live<CR>", opts)
 map("n", "<leader>r", ":Pick buffers<CR>", opts)
 
--- Buffers
-map("n", ",", "<Cmd>BufferPrevious<CR>", opts)
-map("n", ".", "<Cmd>BufferNext<CR>", opts)
-map("n", "<C-c>", "<Cmd>BufferClose<CR>", opts)
-map("n", "<C-x>", "<Cmd>BufferPin<CR>", opts)
+map("n", ",", ":bn<CR>", opts)
+map("n", ".", ":bp<CR>", opts)
+map("n", "<C-c>", ":bdelete<>", opts)
 
 -- Windows
 map("n", "<C-h>", ":wincmd h<CR>", opts)
