@@ -32,7 +32,7 @@ map("n", "<leader>r", ":Pick buffers<CR>", opts)
 
 map("n", ",", ":bn<CR>", opts)
 map("n", ".", ":bp<CR>", opts)
-map("n", "<C-c>", ":bdelete<>", opts)
+map("n", "<C-c>", ":bdelete<CR>", opts)
 
 -- Windows
 map("n", "<C-h>", ":wincmd h<CR>", opts)

@@ -13,9 +13,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.pairs" },
 	{ src = "https://github.com/nvim-mini/mini.starter.git" },
 	{ src = "https://github.com/nvim-mini/mini.bufremove.git" },
-	{ src = "https://github.com/nvim-mini/mini.bufremove.git" },
 	{ src = "https://github.com/aznhe21/actions-preview.nvim" },
-	-- { src = "https://github.com/romgrk/barbar.nvim.git" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons.git" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim.git" },
 	{ src = "https://github.com/vimpostor/vim-tpipeline.git" },
@@ -60,9 +58,9 @@ require("lualine").setup({
 		lualine_a = { "mode" },
 		lualine_b = { "filename" },
 		lualine_c = {"diagnostics", "branch", "diff"}, 
-		lualine_x = { "filetype", "lsp_status" },
+		lualine_x = { "lsp_status" },
 		lualine_y = { "buffers" },
-		lualine_z = { "location" },
+		lualine_z = { "filetype" },
 	},
 })
 
