@@ -1,3 +1,4 @@
+
 vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/EdenEast/nightfox.nvim" },
@@ -25,6 +26,13 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.diff.git" },
 	{ src = "https://github.com/pmizio/typescript-tools.nvim" },
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim.git" },
+	{ src = "https://github.com/harrisonablack/jcr.git" },
+	{ src = "https://github.com/windwp/nvim-ts-autotag.git" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter.git" },
+	{ src = "https://github.com/epwalsh/obsidian.nvim.git" },
+	{ src = "https://github.com/saghen/blink.compat.git" },
+	{ src = "https://github.com/kiennt63/harpoon-files.nvim.git" },
+	{ src = "https://github.com/ThePrimeagen/harpoon.git", version = "harpoon2" },
 })
 
 local win_config = function()
@@ -47,7 +55,8 @@ require("mini.pick").setup({
 require("mini.diff").setup()
 require("mini.pairs").setup()
 require("mini.starter").setup()
-
+require("harpoon"):setup()
+require("harpoon_files").setup()
 require("lualine").setup({
 	options = {
 		theme = "tomorrow_night",
@@ -60,7 +69,7 @@ require("lualine").setup({
 		lualine_c = {"diagnostics", "branch", "diff"}, 
 		lualine_x = {},
 		-- lualine_x = { "lsp_status" },
-		lualine_y = { "buffers" },
+		lualine_y = { require("harpoon_files").lualine_component },
 		lualine_z = { "filetype" },
 	},
 })
@@ -93,10 +102,10 @@ require("lazydev").setup()
 local luasnip = require("luasnip")
 luasnip.config.setup({})
 
-require("blink.cmp").setup({
-	keymap = {
-		preset = "super-tab",
-	},
+	require("blink.cmp").setup({
+		keymap = {
+			preset = "super-tab",
+		},
 	fuzzy = {
 		implementation = "rust",
 		prebuilt_binaries = {
@@ -104,13 +113,35 @@ require("blink.cmp").setup({
 		},
 	},
 	snippets = { preset = "luasnip" },
-	sources = {
-		default = { "lsp", "path", "snippets", "buffer" },
-		providers = {
-			snippets = {
-				opts = {
-					friendly_snippets = true,
+		sources = {
+			default = { "lsp", "path", "snippets", "buffer" },
+			per_filetype = {
+				markdown = {
+					"obsidian",
+					"obsidian_new",
+					"obsidian_tags",
+					"lsp",
+					"path",
+					"snippets",
 				},
+			},
+			providers = {
+				obsidian = {
+					name = "obsidian",
+					module = "blink.compat.source",
+				},
+				obsidian_new = {
+					name = "obsidian_new",
+					module = "blink.compat.source",
+				},
+				obsidian_tags = {
+					name = "obsidian_tags",
+					module = "blink.compat.source",
+				},
+				snippets = {
+					opts = {
+						friendly_snippets = true,
+					},
 			},
 		},
 	},
@@ -127,9 +158,31 @@ require("blink.cmp").setup({
 })
 
 -- Misc
+require("nvim-treesitter").setup()
 require("fidget").setup()
-
 require("typescript-tools").setup()
+require("nvim-ts-autotag").setup()
+require("blink.compat").setup()
+
 
 require('render-markdown').setup({})
 
+require("obsidian").setup({
+	workspaces = {
+		{
+			name = "notes",
+			path = "~/vault",
+		},
+	},
+	completion = {
+		nvim_cmp = true,
+		min_chars = 0,
+	},
+	picker = {
+		name = "mini.pick",
+	},
+	templates = {
+		folder = "templates",
+
+	}
+})

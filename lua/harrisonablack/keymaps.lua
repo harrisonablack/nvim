@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 
 local opts = { noremap = true, silent = true }
 local map = vim.keymap.set
+local harpoon = require("harpoon")
 
 -- General
 map("n", "<leader>o", ":update<CR>:source<CR>", opts)
@@ -29,6 +30,14 @@ map("n", "<leader>sa", require("actions-preview").code_actions, opts)
 map("n", "<leader>f", ":Pick files<CR>", opts)
 map("n", "<leader>g", ":Pick grep_live<CR>", opts)
 map("n", "<leader>r", ":Pick buffers<CR>", opts)
+map("n", "<leader>a", function() harpoon:list():add() end, opts)
+map("n", "<leader>A", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, opts)
+map("n", "<leader>1", function() harpoon:list():select(1) end, opts)
+map("n", "<leader>2", function() harpoon:list():select(2) end, opts)
+map("n", "<leader>3", function() harpoon:list():select(3) end, opts)
+map("n", "<leader>4", function() harpoon:list():select(4) end, opts)
+map("n", "[h", function() harpoon:list():prev() end, opts)
+map("n", "]h", function() harpoon:list():next() end, opts)
 
 map("n", ",", ":bn<CR>", opts)
 map("n", ".", ":bp<CR>", opts)
