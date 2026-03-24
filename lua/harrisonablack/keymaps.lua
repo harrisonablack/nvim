@@ -27,9 +27,9 @@ map("n", "lh", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 map("n", "<leader>sa", require("actions-preview").code_actions, opts)
 
 -- Pickers
-map("n", "<leader>f", ":Pick files<CR>", opts)
-map("n", "<leader>g", ":Pick grep_live<CR>", opts)
-map("n", "<leader>r", ":Pick buffers<CR>", opts)
+map("n", "<leader>f", ":Telescope find_files<CR>", opts)
+map("n", "<leader>g", ":Telescope live_grep<CR>", opts)
+map("n", "<leader>r", ":Telescope buffers<CR>", opts)
 map("n", "<leader>a", function() harpoon:list():add() end, opts)
 map("n", "<leader>A", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, opts)
 map("n", "<leader>1", function() harpoon:list():select(1) end, opts)
@@ -66,3 +66,5 @@ map({ "n", "v", "x" }, "<Up>", "<Nop>", opts)
 map({ "n", "v", "x" }, "<Down>", "<Nop>", opts)
 map({ "n", "v", "x" }, "<Left>", "<Nop>", opts)
 map({ "n", "v", "x" }, "<Right>", "<Nop>", opts)
+
+
