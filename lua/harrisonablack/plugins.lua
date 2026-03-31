@@ -20,22 +20,24 @@ vim.pack.add({
 	{ src = "https://github.com/j-hui/fidget.nvim.git" },
 	{ src = "https://github.com/L3MON4D3/LuaSnip.git" },
 	{ src = "https://github.com/rafamadriz/friendly-snippets.git" },
-	{ src = "https://github.com/nvim-mini/mini.diff.git" },
 	{ src = "https://github.com/pmizio/typescript-tools.nvim" },
-	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim.git" },
 	{ src = "https://github.com/harrisonablack/jcr.git" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag.git" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter.git" },
 	{ src = "https://github.com/obsidian-nvim/obsidian.nvim.git" },
 	{ src = "https://github.com/saghen/blink.compat.git" },
 	{ src = "https://github.com/kiennt63/harpoon-files.nvim.git" },
-	{ src = "https://github.com/ThePrimeagen/harpoon.git",                     version = "harpoon2" },
+	{ src = "https://github.com/ThePrimeagen/harpoon.git",               version = "harpoon2" },
 	{ src = "https://github.com/nvim-telescope/telescope.nvim.git" },
 	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
 	{ src = "https://github.com/MunifTanjim/nui.nvim.git" },
+	{ src = "https://github.com/lewis6991/gitsigns.nvim.git" },
+	{ src = "https://github.com/OXY2DEV/markview.nvim.git" },
+	{ src = "https://github.com/chomosuke/typst-preview.nvim.git" },
 })
 
-require("mini.diff").setup()
+require("typst-preview").setup()
+require("gitsigns").setup({})
 require("mini.pairs").setup()
 require("harpoon"):setup()
 require("harpoon_files").setup()
@@ -73,9 +75,7 @@ require("trouble").setup()
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("lazydev").setup()
-
-local luasnip = require("luasnip")
-luasnip.config.setup({})
+require("luasnip").setup({})
 
 require("blink.cmp").setup({
 	keymap = {
@@ -146,14 +146,13 @@ require("blink.compat").setup()
 -- 		enabled = true
 -- 	}
 -- })
-
-require("render-markdown").setup({
-	render_modes = true,
-	latex = {
-		enabled = true,
-		converter = "latex2text",
-	},
-})
+-- require("render-markdown").setup({
+-- 	render_modes = true,
+-- 	latex = {
+-- 		enabled = true,
+-- 		converter = "latex2text",
+-- 	},
+-- })
 
 require("obsidian").setup({
 	legacy_commands = false, -- this will be removed in the next major release
@@ -221,3 +220,9 @@ require("telescope").setup({
 	},
 })
 require("telescope").load_extension("ui-select")
+
+require("markview").setup({
+	preview = {
+		icon_provider = "devicons", -- "mini" or "devicons"
+	},
+})
