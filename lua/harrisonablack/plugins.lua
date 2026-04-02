@@ -15,7 +15,7 @@ vim.pack.add({
 	{ src = "https://github.com/aznhe21/actions-preview.nvim" },
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons.git" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim.git" },
-	{ src = "https://github.com/vimpostor/vim-tpipeline.git" },
+	-- { src = "https://github.com/vimpostor/vim-tpipeline.git" },
 	{ src = "https://github.com/christoomey/vim-tmux-navigator.git" },
 	{ src = "https://github.com/j-hui/fidget.nvim.git" },
 	{ src = "https://github.com/L3MON4D3/LuaSnip.git" },
