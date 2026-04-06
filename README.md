@@ -2,7 +2,7 @@
 
 # Neovim
 
-> *"This morning I realised in horror that I was actually working on a project instead of messing with my neovim configuration"* - [Sylvan "Vimothee" Franklin](https://www.youtube.com/watch?v=xGkL2N8w0H4)
+> *"This morning I realised in horror that I was actually working on a project instead of messing with my neovim configuration"* - Sylvan "Vimothee" Franklin
 
 This is my own personal Neovim config i use.
 
@@ -11,7 +11,7 @@ The config is split into 4 files, the root `init.lua` which calls `lua/nvim/plug
 
 ## Installation and setup
 > [!IMPORTANT]
-> Neovim <=v0.12 is required for this config to work, as the config uses the newly built in vim.pack. nvim v0.12 is currently only available in the nightly branch which i am using [bob](https://github.com/MordechaiHadad/bob) to switch to and from
+> Neovim <=v0.12 is required to use the builtin `vim.pack`
 
 To install the config, clone the repo to your config folder, typically `~/.config/nvim`. Nvim will then prompt to install all plugins
 ```
