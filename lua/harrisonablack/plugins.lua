@@ -6,7 +6,9 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lua/plenary.nvim.git" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim.git" },
 	{ src = "https://github.com/ThePrimeagen/harpoon.git", version = "harpoon2" },
+	{ src = "https://github.com/nvim-tree/nvim-web-devicons.git" },
 	{ src = "https://github.com/kiennt63/harpoon-files.nvim.git" },
+	{ src = "https://github.com/malewicz1337/oil-git.nvim.git" }, 
 
 	-- LSP
 	{ src = "https://github.com/mason-org/mason.nvim.git" },
@@ -16,6 +18,7 @@ vim.pack.add({
 })
 
 require("oil").setup()
+require("oil-git").setup()
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("lualine").setup({
