@@ -21,39 +21,6 @@ require("oil").setup()
 require("oil-git").setup()
 require("mason").setup()
 require("mason-lspconfig").setup()
-require("lualine").setup({
-	options = {
-		theme = "iceberg_dark",
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-		globalstatus = true,
-	},
-	sections = {
-		lualine_a = {
-			{
-				"mode",
-				fmt = function(str)
-					local modes = {
-						["NORMAL"] = "N",
-						["VISUAL"] = "V",
-						["V-LINE"] = "VL",
-						["V-BLOCK"] = "VB",
-						["INSERT"] = "I",
-						["COMMAND"] = "C",
-						["REPLACE"] = "R",
-						["TERMINAL"] = "T",
-					}
-					return modes[str] or str
-				end,
-			},
-		},
-		lualine_b = { "filename" },
-		lualine_c = { "diagnostics", "branch", "diff" },
-		lualine_x = {},
-		lualine_y = { require("harpoon_files").lualine_component },
-		lualine_z = { "filetype" },
-	},
-})
 require("blink.cmp").setup({
 	keymap = {
 		preset = "default",
