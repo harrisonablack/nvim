@@ -33,21 +33,21 @@ require("oil-git").setup()
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("blink.cmp").setup({
-	keymap = {
-		preset = "default",
-		["<Tab>"] = { "select_and_accept", "fallback" },
-	},
-	fuzzy = {
-		implementation = "rust",
-		prebuilt_binaries = {
-			force_version = "v1.6.0",
-		},
-	},
-	completion = {
-		menu = {
-			border = "none",
-		},
-	},
+  keymap = {
+    preset = "default",
+    ["<Tab>"] = { "select_and_accept", "fallback" },
+  },
+  fuzzy = {
+    implementation = "rust",
+    prebuilt_binaries = {
+      force_version = "v1.6.0",
+    },
+  },
+  completion = {
+    menu = {
+      border = "none",
+    },
+  },
 })
 
 require("telescope").setup({
