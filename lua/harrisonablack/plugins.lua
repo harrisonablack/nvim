@@ -23,6 +23,11 @@ vim.pack.add({
 	{ src = "https://github.com/Myriad-Dreamin/tinymist.git" },
 })
 
+require("java").setup({
+  jdk = {
+    auto_install = false,
+  },
+})
 require("oil").setup()
 require("oil-git").setup()
 require("mason").setup()
