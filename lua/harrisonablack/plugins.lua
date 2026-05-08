@@ -51,52 +51,52 @@ require("blink.cmp").setup({
 })
 
 require("telescope").setup({
-	defaults = {
-		prompt_title = false,
-		results_title = false,
-		preview_title = false,
-		preview = { treesitter = true },
-		color_devicons = true,
-		sorting_strategy = "ascending",
-		borderchars = {
-			"", -- top
-			"", -- right
-			"", -- bottom
-			"", -- left
-			"", -- top-left
-			"", -- top-right
-			"", -- bottom-right
-			"", -- bottom-left
-		},
-		path_displays = { "smart" },
-		layout_config = {
-			height = 100,
-			width = 400,
-			prompt_position = "top",
-			preview_cutoff = 40,
-		},
-	},
-	pickers = {
-		find_files = {
-			prompt_title = "",
-			preview_title = "",
-		},
-		live_grep = {
-			prompt_title = "",
-			preview_title = "",
-		},
-		grep_string = {
-			prompt_title = "",
-			preview_title = "",
-		},
-		buffers = {
-			prompt_title = "",
-			preview_title = "",
-		},
-		prompt_prefix = "",
-		selection_caret = "",
-		entry_prefix = "",
-	},
+  defaults = {
+    prompt_title = false,
+    results_title = false,
+    preview_title = false,
+    preview = { treesitter = true },
+    color_devicons = true,
+    sorting_strategy = "ascending",
+    borderchars = {
+      "", -- top
+      "", -- right
+      "", -- bottom
+      "", -- left
+      "", -- top-left
+      "", -- top-right
+      "", -- bottom-right
+      "", -- bottom-left
+    },
+    path_displays = { "smart" },
+    layout_config = {
+      height = 100,
+      width = 400,
+      prompt_position = "top",
+      preview_cutoff = 40,
+    },
+  },
+  pickers = {
+    find_files = {
+      prompt_title = "",
+      preview_title = "",
+    },
+    live_grep = {
+      prompt_title = "",
+      preview_title = "",
+    },
+    grep_string = {
+      prompt_title = "",
+      preview_title = "",
+    },
+    buffers = {
+      prompt_title = "",
+      preview_title = "",
+    },
+    prompt_prefix = "",
+    selection_caret = "",
+    entry_prefix = "",
+  },
 })
 require("telescope").load_extension("ui-select")
 require("harpoon").setup()
