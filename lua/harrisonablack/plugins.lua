@@ -15,7 +15,6 @@ vim.pack.add({
   { src = "https://github.com/saghen/blink.cmp" },
   { src = "https://github.com/mfussenegger/nvim-dap" },
   { src = "https://github.com/nvim-java/nvim-java.git" },
-  { src = "https://github.com/JavaHello/spring-boot.nvim" },
   { src = "https://github.com/nvim-mini/mini.pairs.git" },
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter.git" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag.git" },
