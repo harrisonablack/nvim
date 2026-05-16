@@ -6,7 +6,7 @@
 
 This is my own personal Neovim config i use.
 
-The config is split into 4 files, the root `init.lua` which calls `lua/nvim/plugins.lua`, `lua/nvim/settings.lua` and `lua/nvim/keymaps.lua`. The config is prioritised to be simple and readable.
+The config is split into 4 files, the root `init.lua` which calls `lua/harrisonablack/plugins.lua`, `lua/harrisonablack/options.lua` and `lua/harrisonablack/keymaps.lua`. The config is prioritised to be simple and readable.
 
 
 ## Installation and setup
@@ -19,4 +19,4 @@ git clone https://github.com/harrisonablack/nvim.git ~/.config/nvim && nvim
 ```
 
 ## Linters, LSP's, DSP's and formatters
-[mason.nvim](https://github.com/williamboman/mason.nvim) is used to install LSPs, linters etc and as such can be installed using `:Mason`, or to get help `:help mason`
+[mason.nvim](https://github.com/mason-org/mason.nvim) is used to install LSPs, linters etc and as such can be installed using `:Mason`, or to get help `:help mason`
