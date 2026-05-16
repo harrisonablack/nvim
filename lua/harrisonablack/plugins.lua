@@ -22,10 +22,12 @@ vim.pack.add({
 	{ src = "https://github.com/Myriad-Dreamin/tinymist.git" },
 	{ src = "https://github.com/vyfor/cord.nvim" },
 })
-
 require("java").setup({
   jdk = {
     auto_install = false,
+  },
+  spring_boot_tools = {
+    enable = false,
   },
 })
 require("oil").setup()
@@ -49,7 +51,6 @@ require("blink.cmp").setup({
     },
   },
 })
-
 require("telescope").setup({
   defaults = {
     prompt_title = false,
