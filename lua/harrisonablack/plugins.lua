@@ -100,6 +100,21 @@ require("telescope").setup({
 })
 require("telescope").load_extension("ui-select")
 require("harpoon").setup()
+require("mini.pairs").setup()
+require("ibl").setup()
+require("nvim-ts-autotag").setup()
+require("fidget").setup()
 require("cord").setup{}
+
+vim.lsp.enable("jdtls")
+
+vim.lsp.config("tinymist", {
+  cmd = { "tinymist" },
+  filetypes = { "typst" },
+  settings = {
+    -- ...
+  },
+})
+vim.lsp.enable("tinymist")
 
 vim.cmd("colorscheme carbonfox")
