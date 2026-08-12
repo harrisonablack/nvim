@@ -12,7 +12,6 @@ vim.pack.add({
   { src = "https://github.com/mason-org/mason.nvim.git" },
   { src = "https://github.com/neovim/nvim-lspconfig.git" },
   { src = "https://github.com/mason-org/mason-lspconfig.nvim.git" },
-  { src = "https://github.com/saghen/blink.cmp" },
   { src = "https://github.com/mfussenegger/nvim-dap" },
   { src = "https://github.com/nvim-java/nvim-java.git" },
   { src = "https://github.com/nvim-mini/mini.pairs.git" },
@@ -33,23 +32,6 @@ require("oil").setup()
 require("oil-git").setup()
 require("mason").setup()
 require("mason-lspconfig").setup()
-require("blink.cmp").setup({
-  keymap = {
-    preset = "default",
-    ["<Tab>"] = { "select_and_accept", "fallback" },
-  },
-  fuzzy = {
-    implementation = "rust",
-    prebuilt_binaries = {
-      force_version = "v1.6.0",
-    },
-  },
-  completion = {
-    menu = {
-      border = "none",
-    },
-  },
-})
 require("telescope").setup({
   defaults = {
     prompt_title = false,
