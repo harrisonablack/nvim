@@ -20,6 +20,7 @@ vim.pack.add({
 	{ src = "https://github.com/j-hui/fidget.nvim.git" },
 	{ src = "https://github.com/vyfor/cord.nvim" },
 	{ src = "https://github.com/obsidian-nvim/obsidian.nvim.git" },
+	{ src = "https://github.com/lewis6991/gitsigns.nvim.git" },
 })
 require("java").setup({
   jdk = {
@@ -115,3 +116,4 @@ require("obsidian").setup {
 	},
 }
 
+require("gitsigns").setup()
