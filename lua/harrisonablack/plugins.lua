@@ -104,9 +104,20 @@ require("mini.pairs").setup()
 require("ibl").setup()
 require("nvim-ts-autotag").setup()
 require("fidget").setup()
-require("cord").setup{}
 
 vim.lsp.enable("jdtls")
+require('cord').setup {
+ 	display = {
+		theme = "classic",
+	},
+	advanced = {
+		discord = {
+			reconnect = {
+				enabled = true,
+			},
+		},
+	},
+}
 
 
 vim.cmd("colorscheme carbonfox")
