@@ -19,7 +19,6 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter.git" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag.git" },
 	{ src = "https://github.com/j-hui/fidget.nvim.git" },
-	{ src = "https://github.com/Myriad-Dreamin/tinymist.git" },
 	{ src = "https://github.com/vyfor/cord.nvim" },
 })
 require("java").setup({
@@ -109,13 +108,5 @@ require("cord").setup{}
 
 vim.lsp.enable("jdtls")
 
-vim.lsp.config("tinymist", {
-  cmd = { "tinymist" },
-  filetypes = { "typst" },
-  settings = {
-    -- ...
-  },
-})
-vim.lsp.enable("tinymist")
 
 vim.cmd("colorscheme carbonfox")
