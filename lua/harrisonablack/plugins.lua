@@ -19,6 +19,7 @@ vim.pack.add({
 	{ src = "https://github.com/windwp/nvim-ts-autotag.git" },
 	{ src = "https://github.com/j-hui/fidget.nvim.git" },
 	{ src = "https://github.com/vyfor/cord.nvim" },
+	{ src = "https://github.com/obsidian-nvim/obsidian.nvim.git" },
 })
 require("java").setup({
   jdk = {
@@ -103,3 +104,14 @@ require('cord').setup {
 
 
 vim.cmd("colorscheme carbonfox")
+
+require("obsidian").setup {
+  legacy_commands = false, 
+  workspaces = {
+    {
+      name = "notes",
+      path = "~/notes/",
+    },
+	},
+}
+
