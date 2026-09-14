@@ -2,7 +2,11 @@
 
 # Neovim
 
+
+
 > *"This morning I realised in horror that I was actually working on a project instead of messing with my neovim configuration"* - Sylvan "Vimothee" Franklin
+
+![](/img/nvim.png)
 
 This is my own personal Neovim config i use.
 
