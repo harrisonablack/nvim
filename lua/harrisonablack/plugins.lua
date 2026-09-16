@@ -88,7 +88,6 @@ require("telescope").setup({
   },
 })
 require("telescope").load_extension("ui-select")
-require("harpoon").setup()
 require("mini.pairs").setup()
 require("ibl").setup()
 require("nvim-ts-autotag").setup()
