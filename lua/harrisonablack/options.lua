@@ -1,20 +1,22 @@
-vim.g.mapleader = " "
-vim.g.have_nerd_font = true
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.winborder = "rounded"
-vim.o.smartindent = true
-vim.o.termguicolors = true
-vim.o.signcolumn = "yes"
-vim.o.clipboard = "unnamedplus"
-vim.o.laststatus = 3
-vim.o.softtabstop = 2
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.cursorcolumn = false
-vim.o.ignorecase = true
-vim.o.conceallevel = 2
-vim.o.cmdheight = 0
+local o, g = vim.opt, vim.g
+
+g.mapleader = " "
+g.have_nerd_font = true
+o.number = true
+o.relativenumber = true
+o.winborder = "rounded"
+o.smartindent = true
+o.termguicolors = true
+o.signcolumn = "yes"
+o.clipboard = "unnamedplus"
+o.laststatus = 3
+o.softtabstop = 2
+o.tabstop = 2
+o.shiftwidth = 2
+o.cursorcolumn = false
+o.ignorecase = true
+o.conceallevel = 2
+o.cmdheight = 0
 vim.diagnostic.config({
   virtual_text = true,
 })
