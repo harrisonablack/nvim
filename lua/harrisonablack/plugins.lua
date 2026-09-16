@@ -121,3 +121,25 @@ require("obsidian").setup {
 }
 
 require("gitsigns").setup()
+
+local cmp = require('blink.cmp')
+cmp.build():pwait()
+cmp.setup({
+  fuzzy = { implementation = "lua" },
+  keymap = {
+    preset = "default",
+    ["<Tab>"] = { "select_and_accept", "fallback" },
+  },
+  completion = {
+    menu = {
+      draw = {
+        columns = {
+          { "kind_icon" },
+          { "label" },
+					{ "label_description" },
+        },
+      },
+    },
+  },
+})
+
