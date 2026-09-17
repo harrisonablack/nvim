@@ -1,1 +1,1 @@
-require("harrisonablack")
+require "harrisonablack"
