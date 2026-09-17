@@ -16,7 +16,6 @@ vim.pack.add {
   gh "neovim/nvim-lspconfig.git",
   gh "mason-org/mason-lspconfig.nvim.git",
   gh "mfussenegger/nvim-dap",
-  gh "nvim-java/nvim-java.git",
   gh "nvim-mini/mini.pairs.git",
   gh "nvim-treesitter/nvim-treesitter.git",
   gh "windwp/nvim-ts-autotag.git",
@@ -31,14 +30,6 @@ vim.pack.add {
   gh "folke/trouble.nvim",
 }
 
-require("java").setup {
-  jdk = {
-    auto_install = false,
-  },
-  spring_boot_tools = {
-    enable = false,
-  },
-}
 require("oil").setup()
 require("oil-git").setup()
 require("mason").setup()
@@ -97,7 +88,6 @@ require("ibl").setup()
 require("nvim-ts-autotag").setup()
 require("fidget").setup()
 
-vim.lsp.enable "jdtls"
 require("cord").setup {
   display = {
     theme = "classic",
