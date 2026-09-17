@@ -1,4 +1,6 @@
-local gh = function(x) return "https://github.com/" .. x end
+local gh = function(x)
+  return "https://github.com/" .. x
+end
 
 vim.pack.add {
   gh "stevearc/oil.nvim",
