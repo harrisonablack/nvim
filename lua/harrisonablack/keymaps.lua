@@ -2,7 +2,7 @@ local opts = { noremap = true, silent = true }
 local map = vim.keymap.set
 
 local function with_desc(desc)
-  return vim.tbl_extend("force", opts, { desc = desc })
+	return vim.tbl_extend("force", opts, { desc = desc })
 end
 
 map("n", "<leader>o", ":update<CR>:source<CR>", opts)

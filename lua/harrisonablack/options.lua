@@ -18,7 +18,7 @@ o.ignorecase = true
 o.conceallevel = 2
 o.cmdheight = 0
 vim.diagnostic.config({
-  virtual_text = true,
+	virtual_text = true,
 })
 
-require('vim._core.ui2').enable()
+require("vim._core.ui2").enable()
