@@ -1,9 +1,6 @@
 {
-  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
-  "Lua.diagnostics.disable": [
-    "unused-function",
-    "unused-local",
-    "redefined-local"
-  ],
-  "Lua.diagnostics.globals": ["vim"]
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "runtime.version": "LuaJIT",
+  "workspace.library": ["$VIMRUNTIME/lua"],
+  "diagnostics.globals": ["vim"]
 }
