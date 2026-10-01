@@ -1,55 +1,64 @@
-local opts = { noremap = true, silent = true }
-local map = vim.keymap.set
-
-local function with_desc(desc)
-  return vim.tbl_extend("force", opts, { desc = desc })
+local function map(mode, lhs, rhs, desc)
+  vim.keymap.set(mode, lhs, rhs, { silent = true, desc = desc })
 end
 
-map("n", "<leader>o", ":update<CR>:source<CR>", opts)
-map("n", "<leader>w", ":w<CR>", opts)
-map("n", "<leader>q", ":q<CR>", opts)
-map("n", "<leader>Q", ":wqa<CR>", opts)
-map("n", "<leader>bd", ":bd<CR>", opts)
-map("n", "<leader>bp", ":bp<CR>", opts)
-map("n", "<leader>v", ":vsplit<CR>", opts)
+map("n", "<leader>o", "<Cmd>restart<CR>", "Restart Neovim")
+map("n", "<leader>w", "<Cmd>write<CR>", "Write buffer")
+map("n", "<leader>q", "<Cmd>quit<CR>", "Quit window")
+map("n", "<leader>Q", "<Cmd>wqall<CR>", "Write all and quit")
+map("n", "<leader>bd", "<Cmd>bdelete<CR>", "Delete buffer")
+map("n", "<leader>bp", "<Cmd>bprevious<CR>", "Previous buffer")
+map("n", "<leader>bn", "<Cmd>bnext<CR>", "Next buffer")
+map("n", "<leader>v", "<Cmd>vsplit<CR>", "Split window vertically")
+map("n", "<leader>Wv", "<Cmd>vsplit<CR>", "Split window vertically")
+map("n", "<leader>Ws", "<Cmd>split<CR>", "Split window horizontally")
+map("n", "<leader>Wq", "<Cmd>close<CR>", "Close window")
 
-map("n", "<C-F>", "<Cmd>Open .<CR>", opts)
-map("n", "<leader>e", "<Cmd>Oil<CR>", opts)
+map("n", "<C-f>", function()
+  vim.ui.open(vim.fn.getcwd())
+end, "Open working directory externally")
+map("n", "<leader>e", "<Cmd>Oil<CR>", "Explore files")
 
-map("n", "<leader>f", "<Cmd>Telescope find_files<CR>", opts)
-map("n", "<leader>r", "<Cmd>Telescope buffers<CR>", opts)
-map("n", "<leader>g", "<Cmd>Telescope live_grep<CR>", opts)
+local function telescope(picker)
+  return function()
+    require("telescope.builtin")[picker]()
+  end
+end
+map("n", "<leader>f", telescope "find_files", "Find files")
+map("n", "<leader>r", telescope "buffers", "Find buffers")
+map("n", "<leader>g", telescope "live_grep", "Search text")
+map("n", "<leader>sf", telescope "find_files", "Find files")
+map("n", "<leader>sg", telescope "live_grep", "Search text")
+map("n", "<leader>sh", telescope "help_tags", "Search help")
+map("n", "<leader>sr", telescope "oldfiles", "Find recent files")
+map("n", "<leader>sd", telescope "diagnostics", "Search diagnostics")
 
-map("n", "<C-h>", ":wincmd h<CR>", opts)
-map("n", "<C-j>", ":wincmd j<CR>", opts)
-map("n", "<C-k>", ":wincmd k<CR>", opts)
-map("n", "<C-l>", ":wincmd l<CR>", opts)
+map("n", "<C-h>", "<Cmd>wincmd h<CR>", "Focus left window")
+map("n", "<C-j>", "<Cmd>wincmd j<CR>", "Focus lower window")
+map("n", "<C-k>", "<Cmd>wincmd k<CR>", "Focus upper window")
+map("n", "<C-l>", "<Cmd>wincmd l<CR>", "Focus right window")
+map("n", "<C-S-h>", "<Cmd>vertical resize -5<CR>", "Narrow window")
+map("n", "<C-S-j>", "<Cmd>resize -5<CR>", "Shorten window")
+map("n", "<C-S-k>", "<Cmd>resize +5<CR>", "Heighten window")
+map("n", "<C-S-l>", "<Cmd>vertical resize +5<CR>", "Widen window")
 
-map("n", "<C-S-h>", ":vert res -5<CR>", opts)
-map("n", "<C-S-j>", ":res -5<CR>", opts)
-map("n", "<C-S-k>", ":res +5<CR>", opts)
-map("n", "<C-S-l>", ":vert res +5<CR>", opts)
+map({ "n", "v" }, ";", ":", "Enter command line")
+map({ "n", "v" }, ":", ";", "Repeat character search")
+map("n", "<Esc>", "<Cmd>nohlsearch<CR>", "Clear search highlighting")
 
-map({ "n", "v", "x" }, ";", ":", opts)
-map({ "n", "v", "x" }, ":", ";", opts)
+map("n", "gd", vim.lsp.buf.definition, "LSP: Go to definition")
+map("n", "gD", vim.lsp.buf.declaration, "LSP: Go to declaration")
+map("n", "<leader>ly", vim.lsp.buf.type_definition, "LSP: Go to type definition")
+map({ "n", "x" }, "<leader>la", vim.lsp.buf.code_action, "LSP: Code actions")
+map("n", "<leader>ln", vim.lsp.buf.rename, "LSP: Rename symbol")
+map("n", "<leader>lf", function()
+  vim.lsp.buf.format { bufnr = 0, async = true }
+end, "LSP: Format buffer")
+map("n", "<leader>ls", telescope "lsp_document_symbols", "LSP: Find document symbols")
+map("n", "<leader>li", telescope "lsp_implementations", "LSP: Find implementations")
+map("n", "<leader>lr", telescope "lsp_references", "LSP: Find references")
 
-map("n", "<Esc>", "<cmd>noh<CR>", opts)
-
-require("which-key").add {
-  { "<leader>l", group = "LSP / Diagnostics", mode = { "n", "x" } },
-}
-
-local telescope = require "telescope.builtin"
-
-map("n", "<leader>lq", "<cmd>Trouble qflist toggle<cr>", with_desc "LSP: Trouble quickfix list")
-map("n", "<leader>ll", "<cmd>Trouble loclist toggle<cr>", with_desc "LSP: Trouble location list")
-map({ "n", "x" }, "<leader>la", vim.lsp.buf.code_action, with_desc "LSP: Code actions")
-map("n", "<leader>lf", vim.lsp.buf.format, with_desc "LSP: Format buffer")
-map("n", "<leader>ly", vim.lsp.buf.type_definition, with_desc "LSP: Go to type definition")
-map("n", "<leader>ls", telescope.lsp_document_symbols, with_desc "LSP: Find document symbols")
-map("n", "<leader>li", telescope.lsp_implementations, with_desc "LSP: Find implementations")
-map("n", "<leader>lr", telescope.lsp_references, with_desc "LSP: Find references")
-map("n", "gd", vim.lsp.buf.definition, with_desc "LSP: Go to definition")
-map("n", "gD", vim.lsp.buf.declaration, with_desc "LSP: Go to declaration")
-map("n", "<leader>lD", "<Cmd>Trouble diagnostics toggle<cr>", with_desc "LSP: Trouble global diagnostics")
-map("n", "<leader>ld", "<Cmd>Trouble diagnostics toggle filter.buf=0<cr>", with_desc "LSP: Trouble diagnostics")
+map("n", "<leader>lq", "<Cmd>Trouble qflist toggle<CR>", "Trouble: Quickfix list")
+map("n", "<leader>ll", "<Cmd>Trouble loclist toggle<CR>", "Trouble: Location list")
+map("n", "<leader>lD", "<Cmd>Trouble diagnostics toggle<CR>", "Trouble: Global diagnostics")
+map("n", "<leader>ld", "<Cmd>Trouble diagnostics toggle filter.buf=0<CR>", "Trouble: Buffer diagnostics")
