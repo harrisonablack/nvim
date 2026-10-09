@@ -34,6 +34,17 @@ require("java").setup {
   jdk = { auto_install = false },
   spring_boot_tools = { enable = false },
 }
+
+vim.lsp.config("jdtls", {
+  settings = {
+    java = {
+      configuration = {
+        updateBuildConfiguration = "automatic",
+      },
+    },
+  },
+})
+
 vim.lsp.enable "jdtls"
 
 require("fidget").setup()
