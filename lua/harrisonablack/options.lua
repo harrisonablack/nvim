@@ -8,6 +8,7 @@ o.termguicolors = true
 o.signcolumn = "yes"
 o.clipboard = "unnamedplus"
 o.laststatus = 3
+o.statusline = "%!v:lua.require('harrisonablack.statusline').build()"
 o.softtabstop = 2
 o.tabstop = 2
 o.shiftwidth = 2
