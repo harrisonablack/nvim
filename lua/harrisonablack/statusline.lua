@@ -7,6 +7,13 @@
 
 local M = {}
 
+-- Editor surface background: near-black (RGB 13,13,13).
+local editor_bg = "#0d0d0d"
+
+-- Statusline background: pure black, a notch darker than the editor surface
+-- for a subtle separator at the bottom of the screen.
+local statusline_bg = "#000000"
+
 -- Accent palette for the mode glyph. Foreground only — the segment background
 -- is left transparent so it sits on the bar's own background.
 local palette = {
@@ -38,6 +45,14 @@ local mode_hl = {
 }
 
 local function define_highlights()
+  -- Override the whole editor background, not just the bar. `:highlight`
+  -- merges, so the theme's foreground (and any style) is kept.
+  vim.cmd("hi Normal guibg=" .. editor_bg)
+  vim.cmd("hi NormalNC guibg=" .. editor_bg)
+
+  vim.cmd("hi StatusLine guibg=" .. statusline_bg)
+  vim.cmd("hi StatusLineNC guibg=" .. statusline_bg)
+
   for kind, group in pairs(mode_hl) do
     vim.api.nvim_set_hl(0, group, { fg = palette[kind] })
   end
