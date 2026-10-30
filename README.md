@@ -8,10 +8,9 @@
 
 ![](/img/nvim.png)
 
-This is my own personal Neovim config i use.
+This is my own personal Neovim config i use. Currently i used neovim inside Superlogicals [Rex](https://www.superlogical.com/) multiplexer, currently in open beta.
 
-The config is split into 4 files, the root `init.lua` which calls `lua/harrisonablack/plugins.lua`, `lua/harrisonablack/options.lua` and `lua/harrisonablack/keymaps.lua`. The config is prioritised to be simple and readable.
-
+The config is split into 6 main files, the root `init,lua` which calls `lua/harrisonablack/init.lua`, this then loads `lua/harrisonablack/options` `lua/harrisonablack/keymaps` and `lua/harrisonablack/plugins` the config is prioritised to be simple and readble
 
 ## Installation and setup
 > [!IMPORTANT]
