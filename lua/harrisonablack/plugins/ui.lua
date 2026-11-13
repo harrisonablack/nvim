@@ -9,15 +9,6 @@ require("which-key").add {
   { "<leader>l", group = "LSP / Diagnostics", mode = { "n", "x" } },
 }
 
-require("obsidian").setup {
-  legacy_commands = false,
-  workspaces = {
-    { name = "notes", path = vim.fn.expand "~/notes/" },
-  },
-  picker = { name = "telescope.nvim" },
-}
-require("render-markdown").setup {}
-
 require("cord").setup {
   display = { theme = "classic" },
   advanced = { discord = { reconnect = { enabled = true } } },

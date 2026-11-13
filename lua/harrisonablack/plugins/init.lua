@@ -23,7 +23,6 @@ vim.pack.add {
   gh "j-hui/fidget.nvim",
   gh "vyfor/cord.nvim",
   gh "saghen/blink.cmp",
-  gh "obsidian-nvim/obsidian.nvim",
   gh "lewis6991/gitsigns.nvim",
   gh "MeanderingProgrammer/render-markdown.nvim",
   gh "folke/which-key.nvim",
