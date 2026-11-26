@@ -52,8 +52,8 @@ map("n", "<leader>ly", vim.lsp.buf.type_definition, "LSP: Go to type definition"
 map({ "n", "x" }, "<leader>la", vim.lsp.buf.code_action, "LSP: Code actions")
 map("n", "<leader>ln", vim.lsp.buf.rename, "LSP: Rename symbol")
 map("n", "<leader>lf", function()
-  vim.lsp.buf.format { bufnr = 0, async = true }
-end, "LSP: Format buffer")
+  require("conform").format { async = true, lsp_format = "fallback" }
+end, "Format buffer")
 map("n", "<leader>ls", telescope "lsp_document_symbols", "LSP: Find document symbols")
 map("n", "<leader>li", telescope "lsp_implementations", "LSP: Find implementations")
 map("n", "<leader>lr", telescope "lsp_references", "LSP: Find references")
