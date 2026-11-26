@@ -8,6 +8,7 @@ vim.pack.add {
   gh "MunifTanjim/nui.nvim",
   gh "saghen/blink.lib",
   gh "stevearc/oil.nvim",
+  gh "stevearc/conform.nvim",
   gh "malewicz1337/oil-git.nvim",
   gh "EdenEast/nightfox.nvim",
   gh "nvim-telescope/telescope.nvim",
