@@ -1,6 +1,24 @@
 require("oil").setup()
 require("oil-git").setup()
 
+require("conform").setup {
+  formatters_by_ft = {
+    typescript = { "prettierd" },
+    typescriptreact = { "prettierd" },
+  },
+  formatters = {
+    prettierd = {
+      -- Project settings override these personal defaults per option.
+      prepend_args = {
+        "--config-precedence=file-override",
+        "--no-semi",
+        "--print-width=80",
+        "--single-quote=false",
+      },
+    },
+  },
+}
+
 require("telescope").setup {
   defaults = {
     prompt_title = false,
